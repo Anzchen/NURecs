@@ -10,7 +10,7 @@ export function Header() {
       </p>
 
       <p>
-        With so many options, its hard to find what you love at Northeastern. Find your favorite places to visit.
+        With so many options, its hard to find what you love at Northeastern. Find your new favorites to visit!
       </p>
     </header>
   );
