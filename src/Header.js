@@ -3,16 +3,14 @@ import "./Header.css";
 export function Header() {
   return (
     <header className="header">
-      <h1>Oasis Taquería</h1>
+      <h1>NURecs</h1>
 
       <p className="sub-headline">
-        <b>We've swapped out our keyboards 💻 for tortilla presses 🌮</b>
+        <b>Find your new favorite places!📍</b>
       </p>
 
       <p>
-        With salsas are as spicy as our code, we offer members a delicious break
-        from the screen that will tantalize taste buds. We'll have a new taco
-        ready for you every time you come back. Make sure to visit us often!
+        With so many options, its hard to find what you love at Northeastern. Find your favorite places to visit.
       </p>
     </header>
   );
