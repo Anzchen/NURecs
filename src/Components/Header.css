@@ -1,0 +1,20 @@
+.header {
+  margin: 0 auto;
+  max-width: 60ch;
+  padding: 0 1.75rem;
+}
+
+.sub-headline {
+  font-size: 1.25em;
+}
+
+.header p {
+  line-height: 22px;
+}
+
+@media screen and (min-width: 720px) {
+  .header {
+    padding: 0 2.5rem;
+    text-align: center;
+  }
+}
