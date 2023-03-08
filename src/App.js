@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 style={{ float: 'start' }} id="recbanner">NURecs</h1>
+      <h1 style={{ float: 'start' }} id="recbanner">NU RECS</h1>
 
       <div className='menu-container' ref={menuRef}>
         <div className='menu-trigger' onClick={()=>{setOpen(!open)}}>

@@ -31,10 +31,10 @@ a {
 
 .menu-trigger img{
   position: absolute;
-  top: 20px;
+  top: 30px;
   right: 20px;
-  height: 60px;
-  width: 60px;
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
@@ -126,9 +126,11 @@ h3 span{
 }
 
 #recbanner {
-  background: #8b0000;
+  background: #030317;
   padding: 40px;
   margin: 0px;
   color: white;
+  font-family: 'Chalkduster';
+  font-size: 70px;
 }
 
