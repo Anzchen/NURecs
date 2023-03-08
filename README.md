@@ -71,4 +71,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 # Our approach/steps
-Install react-router-dom library in order to do client side routing
+Use command "npm install react-router-dom " in order to do client side routing
+Use command "npm install @mui/material @emotion/react @emotion/styled" for MUI
