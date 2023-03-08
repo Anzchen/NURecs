@@ -48,12 +48,14 @@ function App() {
 
   return (
     <div className="App">
+      <h1 style={{ float: 'start' }} id="recbanner">NURecs</h1>
+
       <div className='menu-container' ref={menuRef}>
-        <div className='menu-trigger' onClick={() => { setOpen(!open) }}>
+        <div className='menu-trigger' onClick={()=>{setOpen(!open)}}>
           <img src={portrait} alt="husky profile"></img>
         </div>
 
-        <div className={`dropdown=menu ${open ? 'active' : 'inactive'}`}>
+        <div className={`dropdown-menu ${open? 'active' : 'inactive'}`}>
           <h3>Adrian Tam<br /><span>Freshman Year</span></h3>
           <ul>
             <DropdownItem img={user} text={"My Profile"} />
@@ -66,7 +68,6 @@ function App() {
         </div>
       </div>
 
-      <h1 style={{ float: 'start' }} id="recbanner">NURecs</h1>
       <ul>
         <Link to="/" style={linkStyle}>
           <Button variant='contained'>Home</Button>
@@ -86,11 +87,10 @@ function App() {
 
 function DropdownItem(props) {
   return (
-    <li className='dropdownItem'>
+    <li className = 'dropdownItem'>
       <img src={props.img}></img>
       <a> {props.text} </a>
     </li>
-
   );
 }
 
