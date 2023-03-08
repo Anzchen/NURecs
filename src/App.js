@@ -1,9 +1,10 @@
-import { Button } from "@mui/material"
+
 import { Footer } from './Components/Footer';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import Home from "./Home";
 import Restaurant from "./Restaurant";
 import { useEffect} from "react";
+import logo from './images/image.jpeg';
 import "./App.css";
 function App() {
 
@@ -11,23 +12,14 @@ function App() {
     document.title = "NURecs";  
   }, []);
 
-  const linkStyle = {
-    margin: "1rem",
-    textDecoration: "none",
-    color: 'white'
-  };  
-
   return (
     <div className="App">
-      <h1 style={{float: 'start'}}>NURecs</h1>
-      <ul>
-        <Link to="/" style={linkStyle}>
-          <Button variant='contained'>Home</Button>
-          </Link>
-        <Link to="/Restaurant" style={linkStyle}>
-          <Button variant='contained'>Restaurants</Button>
-          </Link>
-      </ul>
+      <div class="topnav" id="myTopnav">
+        <t>NURecs</t>
+        <a href="/restaurant">Restaurants</a>
+        <a href="/">Home</a>
+      </div>
+      <img style={{ width: 1500, height: 300 }} src={logo} alt="NURecs logo" />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/restaurant" element={<Restaurant />}></Route>
