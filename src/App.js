@@ -1,4 +1,4 @@
-import { Header } from './Components/Header';
+import { Button } from "@mui/material"
 import { Footer } from './Components/Footer';
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
@@ -11,17 +11,22 @@ function App() {
     document.title = "NURecs";  
   }, []);
 
+  const linkStyle = {
+    margin: "1rem",
+    textDecoration: "none",
+    color: 'white'
+  };  
+
   return (
     <div className="App">
       <h1 style={{float: 'start'}}>NURecs</h1>
-      <Header />
       <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/Restaurant">Restaurant</Link>
-        </li>
+        <Link to="/" style={linkStyle}>
+          <Button variant='contained'>Home</Button>
+          </Link>
+        <Link to="/Restaurant" style={linkStyle}>
+          <Button variant='contained'>Restaurants</Button>
+          </Link>
       </ul>
       <Routes>
         <Route path="/" element={<Home />}></Route>
