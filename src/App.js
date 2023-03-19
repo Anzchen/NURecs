@@ -1,8 +1,10 @@
-import { Button } from "@mui/material"
+
 import { Footer } from './Components/Footer';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import Home from "./Home";
 import Restaurant from "./Restaurant";
+import { useEffect} from "react";
+import logo from './images/image.jpeg';
 import "./App.css";
 import portrait from '../src/img/husky.png';
 import user from '../src/img/user.png';
@@ -21,6 +23,14 @@ function App() {
     document.title = "NURecs";
   }, []);
 
+  return (
+    <div className="App">
+      <div class="topnav" id="myTopnav">
+        <t>NURecs</t>
+        <a href="/restaurant">Restaurants</a>
+        <a href="/">Home</a>
+      </div>
+      <img style={{ width: 1500, height: 300 }} src={logo} alt="NURecs logo" />
   const linkStyle = {
     margin: "1rem",
     textDecoration: "none",
