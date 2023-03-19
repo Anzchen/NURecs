@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+  
+  .info-box {
+    width: 500px;
+    height: 200px;
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .long-box {
+    height: 300px;
+  }
+  
+  .short-box {
+    height: 100px;
+  }
+  
+  .info-box-long {
+    font-size: 16px;
+    padding: 20px 20px 60px 20px;
+  }
+  
+  .info-box:hover {
+    transform: scale(1.1);
+  }
+  
+  
