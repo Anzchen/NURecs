@@ -1,9 +1,5 @@
 
 import { Footer } from './Components/Footer';
-import { Routes, Route} from "react-router-dom";
-import Home from "./Home";
-import Restaurant from "./Restaurant";
-import { useEffect} from "react";
 import logo from './images/image.jpeg';
 import "./App.css";
 import portrait from '../src/img/husky.png';
@@ -19,24 +15,6 @@ import React, { useState, useEffect, useRef } from 'react';
 
 function App() {
 
-  useEffect(() => {
-    document.title = "NURecs";
-  }, []);
-
-  return (
-    <div className="App">
-      <div class="topnav" id="myTopnav">
-        <t>NURecs</t>
-        <a href="/restaurant">Restaurants</a>
-        <a href="/">Home</a>
-      </div>
-      <img style={{ width: 1500, height: 300 }} src={logo} alt="NURecs logo" />
-  const linkStyle = {
-    margin: "1rem",
-    textDecoration: "none",
-    color: 'white'
-  };
-
   // this is for clicking dropdowns
   const [open, setOpen] = useState(false);
 
@@ -50,15 +28,23 @@ function App() {
     };
 
     document.addEventListener("mousedown", handler);
+    document.title = "NURecs";
 
     return () => {
       document.removeEventListener("mousedown", handler);
     }
-  });
+  }, []);
 
   return (
     <div className="App">
-      <h1 style={{ float: 'start' }} id="recbanner">NU RECS</h1>
+      <div class="topnav" id="myTopnav">
+        <t>NURecs</t>
+        <a href="/restaurant">Restaurants</a>
+        <a href="/">Home</a>
+      </div>
+      {/* <img style={{ width: 1500, height: 300 }} src={logo} alt="NURecs logo" /> */}
+
+      {/* <h1 style={{ float: 'start' }} id="recbanner">NU RECS</h1> */}
 
       <div className='menu-container' ref={menuRef}>
         <div className='menu-trigger' onClick={()=>{setOpen(!open)}}>
@@ -77,19 +63,6 @@ function App() {
           </ul>
         </div>
       </div>
-
-      <ul>
-        <Link to="/" style={linkStyle}>
-          <Button variant='contained'>Home</Button>
-        </Link>
-        <Link to="/Restaurant" style={linkStyle}>
-          <Button variant='contained'>Restaurants</Button>
-        </Link>
-      </ul>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/restaurant" element={<Restaurant />}></Route>
-      </Routes>
       <Footer />
     </div>
   );
