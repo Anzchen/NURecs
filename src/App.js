@@ -1,6 +1,5 @@
 
 import { Footer } from './Components/Footer';
-import { Header } from './Components/Header';
 import { Routes, Route} from "react-router-dom";
 import Home from "./Home";
 import Restaurant from "./Restaurant";
