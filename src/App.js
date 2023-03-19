@@ -15,7 +15,6 @@ import help from '../src/img/question.png';
 import logout from '../src/img/log-out.png';
 import React, { useState, useEffect, useRef } from 'react';
 
-
 const supabaseUrl = 'https://hnnuqgisixebdyvrctmz.supabase.co'
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhubnVxZ2lzaXhlYmR5dnJjdG16Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzgyNDIyMzAsImV4cCI6MTk5MzgxODIzMH0.11o7CFRgQbEOXewt_R4QI0JIXLi1FV14whhlyxJs6G8'
 const supabase = createClient(supabaseUrl, supabaseKey)
@@ -44,6 +43,11 @@ function App() {
     getRestaurants().then( data =>  {
       console.log(data.data)
     });
+
+    // async function fetchRestaurants() {
+    //   sortRestaurants(await getAllRestaurants());
+    // }
+    // fetchRestaurants();
 
     return () => {
       document.removeEventListener("mousedown", handler);
