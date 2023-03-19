@@ -1,5 +1,9 @@
 
 import { Footer } from './Components/Footer';
+import { Header } from './Components/Header';
+import { Routes, Route} from "react-router-dom";
+import Home from "./Home";
+import Restaurant from "./Restaurant";
 import logo from './images/image.jpeg';
 import "./App.css";
 import portrait from '../src/img/husky.png';
@@ -63,6 +67,10 @@ function App() {
           </ul>
         </div>
       </div>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/restaurant" element={<Restaurant />}></Route>
+      </Routes>
       <Footer />
     </div>
   );
