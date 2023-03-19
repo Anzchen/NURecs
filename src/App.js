@@ -5,10 +5,25 @@ import Home from "./Home";
 import Restaurant from "./Restaurant";
 import { useEffect} from "react";
 import "./App.css";
-function App() {
 
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = 'https://hnnuqgisixebdyvrctmz.supabase.co'
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhubnVxZ2lzaXhlYmR5dnJjdG16Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzgyNDIyMzAsImV4cCI6MTk5MzgxODIzMH0.11o7CFRgQbEOXewt_R4QI0JIXLi1FV14whhlyxJs6G8'
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+async function getRestaurants() {
+  return await supabase.from('restaurants').select()
+  // console.log(restaurants)
+}
+
+function App() {
+  
   useEffect(() => {
     document.title = "NURecs";  
+    getRestaurants().then( data =>  {
+      console.log(data.data)
+    });
   }, []);
 
   const linkStyle = {
