@@ -1,4 +1,4 @@
-import React, {} from 'react';
+import React, { } from 'react';
 import "./App.css";
 import { Footer } from './Components/Footer';
 import { Routes, Route } from "react-router-dom";
@@ -42,16 +42,17 @@ function App() {
   }
 
   return (
-    <div className="App" >
+    // the banner
+    <div className="App">
       <div className="topnav" id="myTopnav">
         <t>NURecs</t>
         <a href="/restaurant">Restaurants</a>
         <a href="/">Home</a>
       </div>
-      {/* <img style={{ width: 1500, height: 300 }} src={logo} alt="NURecs logo" /> */}
+
 
       {/* <h1 style={{ float: 'start' }} id="recbanner">NU RECS</h1> */}
-      
+
       <Profile />
 
       <Routes>
