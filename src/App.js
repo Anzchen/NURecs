@@ -2,8 +2,8 @@ import React, {} from 'react';
 import "./App.css";
 import { Footer } from './Components/Footer';
 import { Routes, Route } from "react-router-dom";
-import Home from "./Navigation/Home";
-import Restaurant from "./Navigation/Restaurant";
+import Home from "./Home";
+import Restaurant from "./Restaurant";
 import Profile from "./Components/Profile";
 
 function App() {
