@@ -5,15 +5,8 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Restaurant from "./Restaurant";
 import logo from './images/image.jpeg';
-import "./App.css";
+import "./index.css";
 import { createClient } from '@supabase/supabase-js'
-import portrait from '../src/img/husky.png';
-import user from '../src/img/user.png';
-import edit from '../src/img/edit.png';
-import inbox from '../src/img/envelope.png';
-import settings from '../src/img/settings.png';
-import help from '../src/img/question.png';
-import logout from '../src/img/log-out.png';
 import Profile from "./Components/Profile";
 import { useState, useEffect, useRef } from 'react';
 
@@ -74,7 +67,7 @@ function App() {
       <Profile />
 
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/home" element={<Home />}></Route>
         <Route path="/restaurant" element={<Restaurant />}></Route>
       </Routes>
       <Footer />
