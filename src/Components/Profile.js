@@ -9,7 +9,7 @@ import help from '../img/question.png';
 import logout from '../img/log-out.png';
 
 function Profile() {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = React.useState(false);
 
     let menuRef = useRef();
 

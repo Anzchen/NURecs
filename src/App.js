@@ -17,8 +17,8 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 function App() {
 
   // this is for clicking dropdowns
-  const [restaurantData, setRestaurantData] = useState([]);
-  const [open, setOpen] = useState(false);
+  const [restaurantData, setRestaurantData] = React.useState([]);
+  const [open, setOpen] = React.useState(false);
 
   let menuRef = useRef();
 
@@ -37,7 +37,7 @@ function App() {
   }, []);
 
   async function getRestaurants() {
-    const { data, error } = await supabase.from('restaurants').select();
+    const { data } = await supabase.from('restaurants').select();
     setRestaurantData(data);
   }
 

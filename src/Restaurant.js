@@ -15,12 +15,12 @@ import { ListItem,
 import "./Restaurant.css";
 
 const Restaurant = (props) => {
-  const [showBox, setShowBox] = useState(false);
-  const [longBox, setLongBox] = useState(false);
-  const [pageNumber, setPageNumber] = useState('1');
-  // const [sortOrder, setSortOrder] = useState=('');
-  const [isAsc, setIsAsc] = useState(true);
-  // const [restaurantInfo, setRestaurantInfo] = useState([]);
+  const [showBox, setShowBox] = React.useState(false);
+  const [longBox, setLongBox] = React.useState(false);
+  const [pageNumber, setPageNumber] = React.useState('1');
+  const [sortOrder, setSortOrder] = React.useState('');
+  const [isAsc, setIsAsc] = React.useState(true);
+  // const [restaurantInfo, setRestaurantInfo] = React.useState([]);
   const ITEMS_PER_PAGE = 10;
   let unsortedRestaurants = props.data;
 
@@ -62,10 +62,8 @@ const Restaurant = (props) => {
   console.log(unsortedRestaurants);
 
   const handlePageNumber = (newValue) => {
-    const parsed = parseInt(newValue);
-    if (!parsed || parsed < 1) {
-      setPageNumber('');
-    } else {
+    let parsed = parseInt(newValue);
+    if (parsed && parsed >= 1 && parsed <= Math.ceil(unsortedRestaurants.length / ITEMS_PER_PAGE)) {
       setPageNumber(newValue);
     }
    };
@@ -112,33 +110,48 @@ const Restaurant = (props) => {
 
   return (
     <div className="container">
-    <ChakraProvider>
-      <Select
-        onChange={option => {
-          console.log(`Selected sort order ${option.target.value}`);
-            if (option.target.value === 'asc') {
-              setIsAsc(true);
+      <ChakraProvider>
+        <div>
+          <Tag>Sort by</Tag>
+          <br />
+          <Select
+            placeholder='Select a sort order'
+            onChange={option => {
+              console.log(`Selected sort order ${option.target.value}`);
+              setSortOrder(option.target.value);
+            }}>
+            <option value='price'>Price Range</option>
+            <option value='name'>Student name</option>
+            <option value='average'>Average Grade</option>
+          </Select>
+          <br />
+          <Select
+            onChange={option => {
+              console.log(`Selected sort order ${option.target.value}`);
+              if (option.target.value === 'asc') {
+                setIsAsc(true);
               } else {
-              setIsAsc(false);
+                setIsAsc(false);
               }
             }}>
-          <option value='asc'>Ascending</option>
-          <option value='desc'>Descending</option>
-        </Select>
-        <br />
-          <Tag>Page #</Tag>
-          <NumberInput value={pageNumber} onChange={value => handlePageNumber(value)} min={1}>
-            <NumberInputField />
-            <NumberInputStepper>
-              <NumberIncrementStepper />
-              <NumberDecrementStepper />
-            </NumberInputStepper>
-          </NumberInput>
-        <br />
-        <Wrap className={`restaurantView`}>
-            <List spacing={6}>{restaurantView}</List>
-        </Wrap>
-    </ChakraProvider>
+            <option value='asc'>Ascending</option>
+            <option value='desc'>Descending</option>
+          </Select>
+          </div>
+          <br />
+            <Tag>Page #</Tag>
+            <NumberInput value={pageNumber} onChange={value => handlePageNumber(value)} min={1}>
+              <NumberInputField />
+              <NumberInputStepper>
+                <NumberIncrementStepper />
+                <NumberDecrementStepper />
+              </NumberInputStepper>
+            </NumberInput>
+          <br />
+          <Wrap className={`restaurantView`}>
+              <List spacing={6}>{restaurantView}</List>
+          </Wrap>
+      </ChakraProvider>
     </div>
   );
 }
