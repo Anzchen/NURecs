@@ -1,7 +1,7 @@
 .header {
   margin: 0 auto;
-  max-width: 60ch;
-  padding: 0 1.75rem;
+  max-width: 1194px;
+  width: 100%;
 }
 
 .sub-headline {
@@ -24,7 +24,7 @@
 }
 
 .text-image-pair {
-  
+
 }
 
 
