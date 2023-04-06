@@ -1,13 +1,15 @@
-/* Container holding the image and the text */
+/* Container holding the image */
 .homeImage {
     position: static;
     text-align: center;
-    color: white;
+    width: 100%;
+    object-fit: 'cover';
 }
 
 /* Centered text */
 .centered {
     position: absolute;
+    color: white;
     top: 33%;
     left: 50%;
     transform: translate(-50%, -50%);
