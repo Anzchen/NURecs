@@ -1,6 +1,6 @@
 .menu-trigger img {
     position: absolute;
-    top: 60px;
+    top: 80px;
     right: 20px;
     height: 70px;
     width: 70px;
@@ -11,7 +11,7 @@
 
 .dropdown-menu {
     position: absolute;
-    top: 100px;
+    top: 150px;
     right: 20px;
     background-color: #fff;
     border-radius: var(--border-radius);

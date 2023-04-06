@@ -4,7 +4,6 @@ import { Footer } from './Components/Footer';
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Restaurant from "./Restaurant";
-import logo from './images/image.jpeg';
 import "./index.css";
 import { createClient } from '@supabase/supabase-js'
 import Profile from "./Components/Profile";

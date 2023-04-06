@@ -1,6 +1,6 @@
 /* Container holding the image and the text */
-.homeimage {
-    position: relative;
+.homeImage {
+    position: static;
     text-align: center;
     color: white;
 }
@@ -8,7 +8,7 @@
 /* Centered text */
 .centered {
     position: absolute;
-    top: 50%;
+    top: 33%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 3em;

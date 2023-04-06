@@ -7,11 +7,11 @@ import Profile from "./Components/Profile";
 
 const Home = () => {
   return (
-    <div>
-      <div className='homeimage'>
+    <div className='homePage'>
+      <div className='homeImage'>
         <img
           src={boston}
-          style={{ width: 1500, height: 350, objectFit: 'cover' }}
+          style={{ width: 1470, height: 350, objectFit: 'cover' }}
           alt="Image of Boston"
         />
 
@@ -19,8 +19,8 @@ const Home = () => {
       </div>
 
 
+
       <Header />
-      <p>This is the Home page of the application</p>
 
     </div>
   );
