@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "./Profile.css";
-import portrait from '../img/huskies.jpeg';
+import portrait from '../img/IMG_8491.jpg';
 import user from '../img/user.png';
 import edit from '../img/edit.png';
 import inbox from '../img/envelope.png';

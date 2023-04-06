@@ -9,39 +9,32 @@ export function Header() {
   return (
     <div>
       <header className="header">
+        <HStack className="left">
+          <Fade left duration={2500}>
+            <img
+              src={res3}
+              style={{ width: 480, height: 400, objectFit: 'scale-down' }}
+              alt="Image of Boston"
+            />
+          </Fade>
 
-        <HStack>
-          {/* <div className="img-container"> */}
-            <Fade left duration={3000}>
-              <img
-                src={res3}
-                style={{ width: 480, height: 400, objectFit: 'scale-down' }}
-                alt="Image of Boston"
-              />
-            </Fade>
-
-
-            {/* <div className='text'> */}
-              <Fade right duration={3000}>
-                <p>Welcome to NURecs! If you’re a new admit to Northeastern University and you’ve never been in Boston, then this is the place for you!
-                  Even if you know the ins and outs of Boston, explore our page for other great restaurants to eat here!
-                  We understand that moving to a new city can be overwhelming, especially when it comes to finding great places to eat.
-                  That’s why we’re here to help!</p>
-              </Fade>
-            {/* </div> */}
+          <Fade right duration={2500}>
+            <p>Welcome to NURecs! If you’re a new admit to Northeastern University and you’ve never been in Boston, then this is the place for you!
+              Even if you know the ins and outs of Boston, explore our page for other great restaurants to eat here!
+              We understand that moving to a new city can be overwhelming, especially when it comes to finding great places to eat.
+              That’s why we’re here to help!</p>
+          </Fade>
         </HStack>
 
-        <HStack>
-          {/* <div className='text'> */}
-            <Fade left duration={3000}>
-              <p>Our website features a curated list of restaurants that we have personally tried and tested,
-                so you can be sure that you’re getting honest and reliable recommendations.
-                You can search for restaurants by location, cuisine, and price range,
-                making it easy to find the perfect spot for your next meal.</p>
-            </Fade>
-          {/* </div> */}
+        <HStack className="right">
+          <Fade left duration={2500}>
+            <p>Our website features a curated list of restaurants that we have personally tried and tested,
+              so you can be sure that you’re getting honest and reliable recommendations.
+              You can search for restaurants by location, cuisine, and price range,
+              making it easy to find the perfect spot for your next meal.</p>
+          </Fade>
 
-          <Fade right duration={3000}>
+          <Fade right duration={2500}>
             <img
               src={res1}
               style={{ width: 480, height: 400, objectFit: 'scale-down' }}
@@ -50,8 +43,8 @@ export function Header() {
           </Fade>
         </HStack>
 
-        <HStack>
-          <Fade left duration={3000}>
+        <HStack className="left">
+          <Fade left duration={2500}>
             <img
               src={res2}
               style={{ width: 480, height: 400, objectFit: 'scale-down' }}
@@ -59,19 +52,13 @@ export function Header() {
             />
           </Fade>
 
-          {/* <div className='text'> */}
-            <Fade right duration={3000}>
-              <p>Whether you’re looking for a casual spot to grab a quick bite between classes or
-                a fancy restaurant to celebrate a special occasion, we’ve got you covered.
-                Explore our website to discover the best restaurants in Boston for Northeastern students,
-                and get ready to indulge in some of the city’s most delicious cuisine!</p>
-            </Fade>
-          {/* </div> */}
-
+          <Fade right duration={2500}>
+            <p>Whether you’re looking for a casual spot to grab a quick bite between classes or
+              a fancy restaurant to celebrate a special occasion, we’ve got you covered.
+              Explore our website to discover the best restaurants in Boston for Northeastern students,
+              and get ready to indulge in some of the city’s most delicious cuisine!</p>
+          </Fade>
         </HStack>
-
-    {/* </div> */}
-
       </header >
     </div >
   );
