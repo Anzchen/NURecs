@@ -49,7 +49,10 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/restaurant" element={<Restaurant data={restaurantData} />}></Route>
       </Routes>
+
+
       <Footer />
+      
     </div>
   );
 }

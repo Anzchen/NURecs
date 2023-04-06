@@ -76,3 +76,4 @@ Use command "npm install react-router-dom " in order to do client side routing
 Use command "npm install @mui/material @emotion/react @emotion/styled" for MUI
 Use command "npm install react-bootstrap-validation --save" for flexbox
 Use command "npm install @supabase/supabase-js" for Supabase
+Use command "npm i react-reveal --force" for react reveal
