@@ -8,17 +8,11 @@ import Profile from "./Components/Profile";
 const Home = () => {
   return (
     <div className='homePage'>
-      <div className='homeImage'>
-        <img
+        <img className='homeImage'
           src={boston}
-          style={{ width: 1470, height: 350, objectFit: 'cover' }}
-          alt="Image of Boston"
+          alt="Boston"
         />
-
-        <div className='centered'> Find your favorites!📍 </div>
-      </div>
-
-
+      <div className='centered'> Find your favorites!📍 </div>
 
       <Header />
 

@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  color: #425743;
+  background-color: #76a66d;
 }
 
 .App-logo {
@@ -39,7 +41,7 @@
 
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #232b2b;
+  background-color: #76a66d;
   overflow: hidden;
   font-family: monospace;
 }
