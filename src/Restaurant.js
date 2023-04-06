@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { ListItem,  
   NumberDecrementStepper,
   NumberIncrementStepper,
@@ -6,12 +6,12 @@ import { ListItem,
   NumberInputField,
   NumberInputStepper, 
   Wrap, 
-  WrapItem, 
   HStack, 
   Select,
   Tag, 
   List, 
-  ChakraProvider} from '@chakra-ui/react';
+  ChakraProvider
+} from '@chakra-ui/react';
 import "./Restaurant.css";
 
 const Restaurant = (props) => {
@@ -20,9 +20,10 @@ const Restaurant = (props) => {
   const [pageNumber, setPageNumber] = React.useState('1');
   const [sortOrder, setSortOrder] = React.useState('');
   const [isAsc, setIsAsc] = React.useState(true);
-  // const [restaurantInfo, setRestaurantInfo] = React.useState([]);
+
   const ITEMS_PER_PAGE = 10;
-  let unsortedRestaurants = props.data;
+  let unsortedRestaurants = [];
+  unsortedRestaurants = props.data;
 
   const handleClick = () => {
     setShowBox(!showBox);
@@ -32,30 +33,6 @@ const Restaurant = (props) => {
     setLongBox(!longBox);
   };
 
-  // const sortRestaurants = (
-  //   (unsortedRestaurants = props) => {
-  //     // eslint-disable-next-line default-case
-  //     switch (isAsc) {
-  //       case true:
-  //         if (sortOrder === 'id') {
-  //           setRestaurantInfo(
-  //             unsortedRestaurants.sort((a, b) => a - b),
-  //           );
-  //           console.log('asc sorted by id');
-  //         }
-  //         break;
-  //       case false:
-  //         if (sortOrder === 'id') {
-  //           setRestaurantInfo(
-  //             unsortedRestaurants.sort((a, b) => b.student.studentID - a.student.studentID),
-  //           );
-  //           console.log('desc sorted by id');
-  //         }
-  //         break;
-  //     }
-  //   },
-  //   [sortOrder, isAsc]);
-  
   const startIndex = 0 + ITEMS_PER_PAGE * (parseInt(pageNumber) - 1);
   const endIndex = ITEMS_PER_PAGE + ITEMS_PER_PAGE * (parseInt(pageNumber) - 1);
   
@@ -108,9 +85,50 @@ const Restaurant = (props) => {
       </ListItem>
   ));
 
+  useEffect(() => {
+    async function sortRestaurants() {
+      // eslint-disable-next-line default-case
+      switch (isAsc) {
+        case true:
+          if (sortOrder === 'id') {
+            for (let i = 0; i < unsortedRestaurants.length - 1; i++) {
+              for (let j = 0; j < unsortedRestaurants.length - i - 1; j++) {
+                if (unsortedRestaurants[j].id > unsortedRestaurants[j + 1].id) {
+                  let temp = unsortedRestaurants[j];
+                  unsortedRestaurants[j] = unsortedRestaurants[j + 1];
+                  unsortedRestaurants[j + 1] = temp;
+                }
+              }
+            }
+            console.log('asc sorted by id');
+          }
+          break;
+        case false:
+          if (sortOrder === 'id') {
+            for (let i = 0; i < unsortedRestaurants.length - 1; i++) {
+              for (let j = 0; j < unsortedRestaurants.length - i - 1; j++) {
+                if (unsortedRestaurants[j].id < unsortedRestaurants[j + 1].id) {
+                  let temp = unsortedRestaurants[j];
+                  unsortedRestaurants[j] = unsortedRestaurants[j + 1];
+                  unsortedRestaurants[j + 1] = temp;
+                }
+              }
+            }
+            console.log('desc sorted by id');
+          }
+          break;
+      }
+      console.log(unsortedRestaurants);
+    }
+    
+    sortRestaurants();
+    setState(restaurantView);
+  }, [isAsc, sortOrder, unsortedRestaurants, restaurantView]);
+
   return (
     <div className="container">
       <ChakraProvider>
+        <HStack>
         <div>
           <Tag>Sort by</Tag>
           <br />
@@ -121,8 +139,7 @@ const Restaurant = (props) => {
               setSortOrder(option.target.value);
             }}>
             <option value='price'>Price Range</option>
-            <option value='name'>Student name</option>
-            <option value='average'>Average Grade</option>
+            <option value='id'>Restaurant id</option>
           </Select>
           <br />
           <Select
@@ -137,8 +154,8 @@ const Restaurant = (props) => {
             <option value='asc'>Ascending</option>
             <option value='desc'>Descending</option>
           </Select>
-          </div>
-          <br />
+        </div>
+        <br />
             <Tag>Page #</Tag>
             <NumberInput value={pageNumber} onChange={value => handlePageNumber(value)} min={1}>
               <NumberInputField />
@@ -148,6 +165,7 @@ const Restaurant = (props) => {
               </NumberInputStepper>
             </NumberInput>
           <br />
+        </HStack>
           <Wrap className={`restaurantView`}>
               <List spacing={6}>{restaurantView}</List>
           </Wrap>

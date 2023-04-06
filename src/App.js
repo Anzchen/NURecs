@@ -22,17 +22,8 @@ function App() {
   let menuRef = useRef();
 
   useEffect(() => {
-
     document.title = "NURecs";
     getRestaurants();
-    // getRestaurants().then( data =>  {
-    //   console.log(data.data)
-    // });
-
-    // async function fetchRestaurants() {
-    //   sortRestaurants(await getAllRestaurants());
-    // }
-    // fetchRestaurants();
   }, []);
 
   async function getRestaurants() {
