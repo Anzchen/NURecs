@@ -10,7 +10,8 @@ import { ListItem,
   Select,
   Tag, 
   List, 
-  ChakraProvider
+  ChakraProvider,
+  VStack
 } from '@chakra-ui/react';
 import "./Restaurant.css";
 
@@ -122,7 +123,7 @@ const Restaurant = (props) => {
     }
     
     sortRestaurants();
-    setState(restaurantView);
+    // setState(restaurantView);
   }, [isAsc, sortOrder, unsortedRestaurants, restaurantView]);
 
   return (
@@ -156,7 +157,8 @@ const Restaurant = (props) => {
           </Select>
         </div>
         <br />
-            <Tag>Page #</Tag>
+          <VStack>
+          <Tag>Page #</Tag>
             <NumberInput value={pageNumber} onChange={value => handlePageNumber(value)} min={1}>
               <NumberInputField />
               <NumberInputStepper>
@@ -164,6 +166,7 @@ const Restaurant = (props) => {
                 <NumberDecrementStepper />
               </NumberInputStepper>
             </NumberInput>
+          </VStack>
           <br />
         </HStack>
           <Wrap className={`restaurantView`}>
