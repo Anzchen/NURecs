@@ -22,13 +22,9 @@ const Restaurant = (props) => {
   const [pageNumber, setPageNumber] = React.useState('1');
   const [sortOrder, setSortOrder] = React.useState('');
   const [isAsc, setIsAsc] = React.useState(true);
-
   const [unsortedRestaurants, setUnsortedRestaurants] = React.useState([]);
-  // console.log(unsortedRestaurants);
 
   const ITEMS_PER_PAGE = 10;
-  // let unsortedRestaurants = [];
-  // unsortedRestaurants = props.data;
 
   const handleClick = () => {
     setShowBox(!showBox);
