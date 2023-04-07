@@ -17,9 +17,6 @@ function App() {
 
   // this is for clicking dropdowns
   const [restaurantData, setRestaurantData] = React.useState([]);
-  const [open, setOpen] = React.useState(false);
-
-  let menuRef = useRef();
 
   useEffect(() => {
     document.title = "NURecs";
@@ -39,9 +36,6 @@ function App() {
         <a href="/restaurant">Restaurants</a>
         <a href="/">Home</a>
       </div>
-
-
-      {/* <h1 style={{ float: 'start' }} id="recbanner">NU RECS</h1> */}
 
       <Profile />
 

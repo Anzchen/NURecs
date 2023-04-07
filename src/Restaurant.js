@@ -14,6 +14,7 @@ import { ListItem,
   VStack
 } from '@chakra-ui/react';
 import "./Restaurant.css";
+import boston from './images/boston.jpeg';
 
 const Restaurant = (props) => {
   const [showBox, setShowBox] = React.useState(false);
@@ -69,11 +70,11 @@ const Restaurant = (props) => {
             <h2>{eachRestaurant.name}</h2>
             {longBox ? (
               <>
-                <p>
-                  Address: {eachRestaurant.address}
-                </p>
-                <p>Price: {getPrice(eachRestaurant.price)} </p>
-                <p>Commute from NEU Campus: {eachRestaurant.distance} miles</p>
+                <VStack>
+                  <p>Address: {eachRestaurant.address}</p>
+                  <p>Price: {getPrice(eachRestaurant.price)} </p>
+                  <p>Commute from NEU Campus: {eachRestaurant.distance} miles</p>
+                </VStack>
               </>
             ) : (
               <p>Type of Cuisine: {eachRestaurant.cuisine}</p>
@@ -82,6 +83,10 @@ const Restaurant = (props) => {
               {longBox ? "Hide Info" : "Show Info"}
             </button>
           </div>
+          <img className='restaurantImage' 
+                    src={boston}
+                    alt="Boston"
+                    />
         </HStack>
       </ListItem>
   ));
@@ -129,7 +134,7 @@ const Restaurant = (props) => {
   return (
     <div className="container">
       <ChakraProvider>
-        <HStack>
+        <VStack className="filterbox">
         <div>
           <Tag>Sort by</Tag>
           <br />
@@ -140,6 +145,7 @@ const Restaurant = (props) => {
               setSortOrder(option.target.value);
             }}>
             <option value='price'>Price Range</option>
+            <option value='distance'>Distance</option>
             <option value='id'>Restaurant id</option>
           </Select>
           <br />
@@ -167,11 +173,11 @@ const Restaurant = (props) => {
               </NumberInputStepper>
             </NumberInput>
           </VStack>
-          <br />
-        </HStack>
-          <Wrap className={`restaurantView`}>
-              <List spacing={6}>{restaurantView}</List>
-          </Wrap>
+        <br />
+      </VStack>
+        <Wrap className={`restaurantView`}>
+            <List spacing={6}>{restaurantView}</List>
+        </Wrap>
       </ChakraProvider>
     </div>
   );

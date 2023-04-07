@@ -8,18 +8,19 @@ import { HStack } from "@chakra-ui/react";
 export function Header() {
   return (
     <div>
+      <h1 className="title"> NURecs </h1>
       <header className="header">
         <HStack className="left">
           <Fade left duration={2500}>
             <img
               src={res3}
               style={{ width: 480, height: 400, objectFit: 'scale-down' }}
-              alt="Image of Boston"
+              alt="Boston"
             />
           </Fade>
 
           <Fade right duration={2500}>
-            <p>Welcome to NURecs! If you’re a new admit to Northeastern University and you’ve never been in Boston, then this is the place for you!
+            <p>If you’re a new admit to Northeastern University and you’ve never been in Boston, then this is the place for you!
               Even if you know the ins and outs of Boston, explore our page for other great restaurants to eat here!
               We understand that moving to a new city can be overwhelming, especially when it comes to finding great places to eat.
               That’s why we’re here to help!</p>
@@ -38,7 +39,7 @@ export function Header() {
             <img
               src={res1}
               style={{ width: 480, height: 400, objectFit: 'scale-down' }}
-              alt="Image of Boston"
+              alt="Boston"
             />
           </Fade>
         </HStack>
@@ -48,7 +49,7 @@ export function Header() {
             <img
               src={res2}
               style={{ width: 480, height: 400, objectFit: 'scale-down' }}
-              alt="Image of Boston"
+              alt="Boston"
             />
           </Fade>
 

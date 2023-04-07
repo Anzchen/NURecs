@@ -1,8 +1,15 @@
 .App {
   text-align: center;
-  color: #425743;
-  background-color: #76a66d;
+  color: #BD98D8ff;
+  background-color: #955D6Cff;
 }
+/* CSS HEX
+--english-violet: #6A4D73ff;
+--wisteria: #BD98D8ff;
+--coral-pink: #D6947Eff;
+--china-rose: #955D6Cff;
+--african-violet: #AF8DC9ff;
+*/
 
 .App-logo {
   height: 40vmin;
@@ -41,7 +48,7 @@
 
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #76a66d;
+  background-color: #6A4D73ff;
   overflow: hidden;
   font-family: monospace;
 }
